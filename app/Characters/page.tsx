@@ -146,7 +146,7 @@ const styles = {
   },
     labelSection: {
     padding: '10px 20px',
-    textAlign: 'left',
+    textAlign: 'left' as React.CSSProperties["textAlign"], // Type-safe value,
   },
   labelText: {
     color: 'gray',
