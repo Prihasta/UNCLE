@@ -24,7 +24,7 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined, videoUrl }: 
   return (
     <div 
       onClick={handleCardClick} 
-      className={`relative w-full h-full rounded-2xl min-w-[550px] xs:h-[45vh] xs:rounded-2xl xs:min-w-[400px] md:min-w-[500px] sm:h-[40vh] md:h-[50vh] md:rounded-2xl lg:min-w-[800px] lg:h-[90vh] ${backgroundImage} text-white bg-cover bg-no-repeat lg:rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
+      className={`relative w-[full] h-full rounded-2xl min-w-[550px] xs:h-[30vh] xs:rounded-2xl xs:min-w-[400px] md:min-w-[500px] sm:h-[30vh] md:h-[25vh] md:rounded-2xl lg:min-w-[900px] lg:h-[60vh] xl:h-[70vh]  ${backgroundImage} text-white bg-cover bg-no-repeat lg:rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
     >
       {isPlaying ? (
         <video 
@@ -58,7 +58,7 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined, videoUrl }: 
 const Camp = () => {
   return (
     <section className="2xl:max-container relative flex flex-col py-10 lg:py-20 bg-stone-950">
-      <div className="hide-scrollbar auto-scroll flex h-[300px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px] px-8">
+      <div className="hide-scrollbar auto-scroll flex h-[400px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[900px] lg:mt-4 xl:h-[640px] px-8">
         <CampSite
           backgroundImage="bg-bg-img-1"
           title="'It Doesn’t Have To Match.'"
