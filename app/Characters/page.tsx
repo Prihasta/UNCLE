@@ -75,7 +75,7 @@ const Page = () => {
 
       {/* Label for Other Supporting Roles */}
       <section style={styles.labelSection} className="bg-stone-950">
-        <p style={styles.labelText}>Other Supporting Roles</p>
+        <p className=" text-gray-600 italic text-sm">Other Supporting Roles</p>
       </section>
 
       {/* Last section - Text on the left and right, no image */}
@@ -124,7 +124,7 @@ const Page = () => {
 
       {/* Label for Other Supporting Roles */}
       <section style={styles.labelSection} className="bg-stone-950 overflow-hidden">
-        <p style={styles.labelText}>source: https://screenrant.com/the-man-from-uncle-cast-characters/</p>
+        <p className=" text-gray-600 italic text-sm">source: https://screenrant.com/the-man-from-uncle-cast-characters/</p>
       </section>
     </div>
   );
@@ -143,15 +143,6 @@ const styles = {
     fontWeight: 'bold',
     fontStyle: 'italic',
     fontSize: '1.5rem',
-  },
-  labelSection: {
-    padding: '10px 20px',
-    textAlign: 'left',
-  },
-  labelText: {
-    color: 'gray',
-    fontSize: '1rem',
-    fontStyle: 'italic',
   },
 };
 
