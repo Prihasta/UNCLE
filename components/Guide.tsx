@@ -9,7 +9,7 @@ const Guide = () => {
       margin: '0 auto',
       backgroundImage: 'linear-gradient(135deg, #0C0A09, #0C0A09)',
       overflow: 'hidden',
-      textAlign: 'center',
+      textAlign: 'center' as React.CSSProperties['textAlign'],
     },
     header: {
       marginTop: '50px',
