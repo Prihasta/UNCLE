@@ -144,6 +144,15 @@ const styles = {
     fontStyle: 'italic',
     fontSize: '1.5rem',
   },
+    labelSection: {
+    padding: '10px 20px',
+    textAlign: 'left',
+  },
+  labelText: {
+    color: 'gray',
+    fontSize: '1rem',
+    fontStyle: 'italic',
+  },
 };
 
 
