@@ -24,7 +24,7 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined, videoUrl }: 
   return (
     <div 
       onClick={handleCardClick} 
-      className={`relative w-[250px] min-w-[550px] xs:h-[30vh] xs:rounded-2xl xs:min-w-[400px] md:min-w-[500px] md:h-[70vh] md:rounded-2xl lg:min-w-[800px] lg:h-[90vh] ${backgroundImage} text-white bg-cover bg-no-repeat lg:rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
+      className={`relative w-full h-full rounded-2xl min-w-[550px] xs:h-[45vh] xs:rounded-2xl xs:min-w-[400px] md:min-w-[500px] sm:h-[40vh] md:h-[50vh] md:rounded-2xl lg:min-w-[800px] lg:h-[90vh] ${backgroundImage} text-white bg-cover bg-no-repeat lg:rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
     >
       {isPlaying ? (
         <video 
