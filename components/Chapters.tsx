@@ -22,33 +22,32 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined, videoUrl }: 
   };
 
   return (
-    <div 
-      onClick={handleCardClick} 
-      className={`relative w-[full] h-full rounded-2xl min-w-[550px] xs:h-[30vh] xs:rounded-2xl xs:min-w-[400px] md:min-w-[500px] sm:h-[30vh] md:h-[25vh] md:rounded-2xl lg:min-w-[900px] lg:h-[60vh] xl:h-[70vh]  ${backgroundImage} text-white bg-cover bg-no-repeat lg:rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
+    <div
+      className={`relative w-full h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[60vh] xl:h-[70vh] min-w-[300px] sm:min-w-[400px] md:min-w-[500px] lg:min-w-[600px] xl:min-w-[700px] rounded-2xl cursor-pointer ${backgroundImage} bg-cover bg-center transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
+      onClick={handleCardClick} // Attach click event to the parent container
     >
       {isPlaying ? (
-        <video 
-          controls 
-          autoPlay 
-          onEnded={handleVideoEnd} 
-          className="w-full h-full rounded-2xl"
+        <video
+          controls
+          autoPlay
+          onEnded={handleVideoEnd}
+          className="absolute top-0 left-0 w-full h-full rounded-2xl z-20" // Ensure proper z-index for video
         >
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       ) : (
-        <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10 lg:rounded-2xl bg-black/60 transition-colors duration-300 hover:bg-black/80">
-          <div className="flexCenter gap-4">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-between p-6 md:p-10 bg-black/60 rounded-2xl transition-colors duration-300 hover:bg-black/80">
+          <div className="flex items-center gap-4">
             <div className="rounded-full bg-blue-200 p-4">
               <Image src="/folded-map.svg" alt="map" width={25} height={25} />
             </div>
             <div className="flex flex-col gap-1">
-              <h4 className="bold-18 text-white">{title}</h4>
-              <p className="regular-14 text-white">{subtitle}</p>
+              <h4 className="text-lg md:text-xl font-bold text-white">{title}</h4>
+              <p className="text-sm md:text-base text-white">{subtitle}</p>
             </div>
           </div>
-          <p className="bold-16 md:bold-20 text-white">{peopleJoined}</p>
-          
+          <p className="text-base md:text-lg font-bold text-white">{peopleJoined}</p>
         </div>
       )}
     </div>
@@ -57,8 +56,8 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined, videoUrl }: 
 
 const Camp = () => {
   return (
-    <section className="2xl:max-container relative flex flex-col py-10 lg:py-20 bg-stone-950">
-      <div className="hide-scrollbar auto-scroll flex h-[400px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[900px] lg:mt-4 xl:h-[640px] px-8">
+    <section className="w-full bg-stone-950 py-10 lg:py-20">
+      <div className="relative flex items-start gap-8 overflow-x-auto px-6 lg:px-10 hide-scrollbar">
         <CampSite
           backgroundImage="bg-bg-img-1"
           title="'It Doesn’t Have To Match.'"
@@ -94,9 +93,10 @@ const Camp = () => {
           peopleJoined="Movie Clip"
           videoUrl="/videos/video5.mp4"
         />
-        <p className="italic absolute bottom-4 left-4 text-xs text-gray-300">Source: Video downloaded from YouTube for education purposes only.</p>
-        {/* Add more CampSite components as needed */}
       </div>
+      <p className="italic text-gray-400 text-xs sm:text-sm md:text-base px-6 lg:px-10 mt-6 md:mt-8 lg:mt-10 text-center">
+        Source: Video downloaded from YouTube for educational purposes only.
+      </p>
     </section>
   );
 };
