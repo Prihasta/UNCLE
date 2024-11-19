@@ -74,7 +74,7 @@ const Camp = () => {
       <div className="relative flex items-start gap-8 overflow-x-auto px-6 lg:px-10 hide-scrollbar">
         <CampSite
           backgroundImage="bg-bg-img-1"
-          title="'It Doesn’t Have To Match.'"
+          title="'It Won't Match.'"
           subtitle="The Man From U.N.C.L.E. (2015)"
           peopleJoined="Movie Clip"
           videoUrl="/videos/video1.mp4"
@@ -88,7 +88,7 @@ const Camp = () => {
         />
         <CampSite
           backgroundImage="bg-bg-img-3"
-          title="'They Were Waiting For Me.'"
+          title="'Don't Flatter Yourself.'"
           subtitle="The Man From U.N.C.L.E. (2015)"
           peopleJoined="Movie Clip"
           videoUrl="/videos/video3.mp4"
