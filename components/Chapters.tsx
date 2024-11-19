@@ -66,6 +66,11 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined, videoUrl }: 
 const Camp = () => {
   return (
     <section className="w-full bg-stone-950 py-10 lg:py-20">
+      {/* Instructional Text */}
+      <p className="text-center text-gray-400 text-sm sm:text-base mb-6 px-6 lg:px-10">
+        Press <span className="font-bold">Shift + Scroll</span> to swipe through the cards.
+      </p>
+
       <div className="relative flex items-start gap-8 overflow-x-auto px-6 lg:px-10 hide-scrollbar">
         <CampSite
           backgroundImage="bg-bg-img-1"
