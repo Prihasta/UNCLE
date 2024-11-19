@@ -23,21 +23,30 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined, videoUrl }: 
 
   return (
     <div
-      className={`relative w-full h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[60vh] xl:h-[70vh] min-w-[300px] sm:min-w-[400px] md:min-w-[500px] lg:min-w-[600px] xl:min-w-[700px] rounded-2xl cursor-pointer ${backgroundImage} bg-cover bg-center transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
-      onClick={handleCardClick} // Attach click event to the parent container
+      className="relative w-full h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[60vh] xl:h-[70vh] min-w-[300px] sm:min-w-[400px] md:min-w-[500px] lg:min-w-[600px] xl:min-w-[700px] rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+      onClick={handleCardClick} // Attach click event to play video
     >
+      {/* Background Layer */}
+      <div
+        className={`absolute top-0 left-0 w-full h-full rounded-2xl bg-cover bg-center ${
+          isPlaying ? "blur-md" : ""
+        } ${backgroundImage}`} // Add blur only when video is playing
+      ></div>
+
       {isPlaying ? (
+        // Video Layer
         <video
           controls
           autoPlay
           onEnded={handleVideoEnd}
-          className="absolute top-0 left-0 w-full h-full rounded-2xl z-20" // Ensure proper z-index for video
+          className="absolute top-0 left-0 w-full h-full rounded-2xl z-20"
         >
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       ) : (
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-between p-6 md:p-10 bg-black/60 rounded-2xl transition-colors duration-300 hover:bg-black/80">
+        // Content Layer
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-between p-6 md:p-10 bg-black/60 rounded-2xl transition-colors duration-300 hover:bg-black/80 z-10">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-blue-200 p-4">
               <Image src="/folded-map.svg" alt="map" width={25} height={25} />
