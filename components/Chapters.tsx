@@ -88,7 +88,7 @@ const Camp = () => {
         />
         <CampSite
           backgroundImage="bg-bg-img-3"
-          title="'Don't Flatter Yourself.'"
+          title="'Report.'"
           subtitle="The Man From U.N.C.L.E. (2015)"
           peopleJoined="Movie Clip"
           videoUrl="/videos/video3.mp4"
